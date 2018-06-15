@@ -8,13 +8,13 @@
         <div class="logo">
           <!-- Text Logo -->
           <!--<router-link :to="{name:'dashboard'}" class="logo">-->
-            <!--<span class="logo-small" style="padding-top: 5px;">Gullin.io</span>-->
-            <!--<span class="logo-large" style="padding-top: 5px;">Gullin.io</span>-->
+          <!--<span class="logo-small" style="padding-top: 5px;">Gullin.io</span>-->
+          <!--<span class="logo-large" style="padding-top: 5px;">Gullin.io</span>-->
           <!--</router-link>-->
           <!-- Image Logo -->
-          <router-link :to="{name:'dashboard'}" class="logo">
-              <img src="/static/images/gullin_logo.png" alt="" height="24" class="logo-large">
-              <img src="/static/images/gullin_logo.png" alt="" height="24" class="logo-small">
+          <router-link :to="{name:'dashboard', params:{company:me_company}}" class="logo">
+            <img src="/static/images/gullin_logo.png" alt="" height="24" class="logo-large">
+            <img src="/static/images/gullin_logo.png" alt="" height="24" class="logo-small">
           </router-link>
         </div>
         <!-- End Logo container-->
@@ -43,10 +43,6 @@
                   <span>My Profile</span>
                 </router-link>
                 <!-- item-->
-                <router-link :to="{name:'settings_verification'}" class="dropdown-item notify-item" v-show="$route.name!=='user_signup_followup'">
-                  <i class="mdi mdi-verified"></i>
-                  <span>Verification</span>
-                </router-link>
                 <a href="http://help.gullin.io" target="_blank" class="dropdown-item notify-item">
                   <i class="mdi mdi-comment-question-outline"></i>
                   <span>FAQ</span>
@@ -69,11 +65,11 @@
                 <span class="text-white">Login</span>
               </router-link>
             </li>
-            <li class="list-inline-item dropdown notification-list">
-              <router-link class="nav-link nav-user" :to="{name:'user_signup'}" role="button">
-                <span class="text-white">Sign Up</span>
-              </router-link>
-            </li>
+            <!--<li class="list-inline-item dropdown notification-list">-->
+            <!--<router-link class="nav-link nav-user" :to="{name:'user_signup'}" role="button">-->
+            <!--<span class="text-white">Sign Up</span>-->
+            <!--</router-link>-->
+            <!--</li>-->
           </ul>
         </div>
         <!-- end menu-extras -->
@@ -88,24 +84,24 @@
           <!-- Navigation Menu-->
           <ul class="navigation-menu">
             <li class="has-submenu" :class="{active: $route.name === 'dashboard'}">
-              <router-link :to="{name:'dashboard'}">
+              <router-link :to="{name:'dashboard', params:{company:me_company}}">
                 <i class="ti-home"></i>Dashboard
               </router-link>
             </li>
             <li class="has-submenu" :class="{active: $route.name === 'token_sale_list' || $route.name === 'token_sale_detail'}">
-              <router-link :to="{name:'token_sale_list'}">
-                <i class="ti-star"></i>Buy Tokens
+              <router-link :to="{name:'whitelist', params:{company:me_company}}">
+                <i class="ti-star"></i>Whitelist
               </router-link>
             </li>
 
             <li class="has-submenu" :class="{active: $route.name === 'wallet'}">
-              <router-link :to="{name:'wallet'}">
-                <i class="ti-wallet"></i>My Wallet
+              <router-link :to="{name:'kyc_data', params:{company:me_company}}">
+                <i class="ti-wallet"></i>KYC Data
               </router-link>
             </li>
 
             <li class="has-submenu" :class="{active: $route.name === 'settings'}">
-              <router-link :to="{name:'settings'}">
+              <router-link :to="{name:'settings', params:{company:me_company}}">
                 <i class="ti-settings"></i>Settings
               </router-link>
             </li>
@@ -152,6 +148,7 @@
       ...mapGetters({
         me: 'me',
         me_name: 'me_name',
+        me_company: 'me_company',
         is_login: 'is_login',
       }),
     },
