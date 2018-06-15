@@ -29,14 +29,9 @@
         </div>
 
         <div class="form-group row m-t-30">
-          <div class="col-sm-7">
+          <div class="col-sm-12 text-center">
             <router-link class="text-muted" :to="{name:'user_login'}">
-              Login
-            </router-link>
-          </div>
-          <div class="col-sm-5 text-right">
-            <router-link class="text-muted" :to="{name:'user_signup'}">
-              Sign Up
+              Back
             </router-link>
           </div>
         </div>
@@ -55,7 +50,6 @@
             </span>
           </div>
           <span v-show="error_message" class="text-danger"><i class="fa fa-warning"></i> {{ error_message }}</span>
-
         </div>
       </div>
     </div>

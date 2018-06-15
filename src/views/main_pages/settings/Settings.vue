@@ -15,11 +15,7 @@
               Profile
             </router-link>
           </li>
-          <li class="nav-item">
-            <router-link :to="{name: 'settings_verification'}" class="nav-link">
-              Verification
-            </router-link>
-          </li>
+
           <li class="nav-item">
             <router-link :to="{name: 'settings_security'}" class="nav-link">
               Security
@@ -948,7 +944,7 @@
             setInterval(function () {
               self.change_password_success_message = 'Password updated, please login use your new password in ' + sec + ' seconds'
               sec -= 1
-              if (sec === -1){
+              if (sec === -1) {
                 $('#change_password_modal').modal('hide')
                 self.$store.dispatch('logout')
               }

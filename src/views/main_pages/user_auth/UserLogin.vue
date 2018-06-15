@@ -2,7 +2,7 @@
   <div class="wrapper-page">
     <div class="page-title-box d-xl-none"></div>
     <div class="text-center">
-      <p class="logo-lg"><span> Login to Gullin</span></p>
+      <p class="logo-lg"><span>Company Portal</span></p>
     </div>
     <div class="card-box" v-if="!login_success">
       <div class="form-horizontal m-t-20">
@@ -10,7 +10,7 @@
           <div class="col-12">
             <div class="input-group">
               <span class="input-group-addon"><i class="mdi mdi-email"></i></span>
-              <input class="form-control" type="email" name="email" v-model="email" placeholder="Your Email">
+              <input class="form-control" type="email" name="email" v-model="email" placeholder="Email">
             </div>
           </div>
         </div>
@@ -19,7 +19,7 @@
           <div class="col-12">
             <div class="input-group">
               <span class="input-group-addon"><i class="mdi mdi-key"></i></span>
-              <input class="form-control" type="password" name="password" v-model="password" placeholder="Your Password"
+              <input class="form-control" type="password" name="password" v-model="password" placeholder="Password"
                      @keyup.enter="login($event)">
             </div>
           </div>
@@ -34,16 +34,16 @@
         </div>
 
         <div class="form-group row m-t-30">
-          <div class="col-sm-7">
+          <div class="col-sm-12 text-center">
             <router-link :to="{name:'user_forget_password'}" class="text-muted"><i class="fa fa-lock m-r-5"></i>
               Forget password?
             </router-link>
           </div>
-          <div class="col-sm-5 text-right">
-            <router-link class="text-muted" :to="{name:'user_signup'}">
-              Sign Up
-            </router-link>
-          </div>
+          <!--<div class="col-sm-5 text-right">-->
+          <!--<router-link class="text-muted" :to="{name:'user_signup'}">-->
+          <!--Sign Up-->
+          <!--</router-link>-->
+          <!--</div>-->
         </div>
       </div>
     </div>

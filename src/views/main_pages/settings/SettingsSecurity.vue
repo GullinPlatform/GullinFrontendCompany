@@ -16,11 +16,6 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link :to="{name: 'settings_verification'}" class="nav-link">
-              Verification
-            </router-link>
-          </li>
-          <li class="nav-item">
             <router-link :to="{name: 'settings_security'}" class="nav-link">
               Security
             </router-link>
@@ -28,7 +23,7 @@
         </ul>
         <div class="tab-content px-3">
           <h4 class="text-dark header-title my-3"><b>Logs</b></h4>
-          <table class="table" v-if="loaded" >
+          <table class="table" v-if="loaded">
             <thead>
             <tr>
               <th>Time</th>

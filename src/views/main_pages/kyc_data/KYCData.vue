@@ -1,10 +1,10 @@
 <template>
-  people invested
+  <p>people invested
   date
   amount invested
   user profile
   export
-  amount contributed to the market cap
+    amount contributed to the market cap</p>
 </template>
 
 <script>

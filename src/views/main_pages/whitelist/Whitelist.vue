@@ -1,10 +1,10 @@
 <template>
-  personal info
+  <p>personal info
   how much
   can invest or not
   signup time
   totally eth estimation
-  pre-sale
+    pre-sale</p>
 </template>
 
 <script>

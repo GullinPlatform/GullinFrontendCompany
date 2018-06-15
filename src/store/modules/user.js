@@ -1,6 +1,7 @@
 import userApi from '../../api/user-api'
 import * as types from '../mutation-types'
 import router from '../../router/index'
+import store from "../index";
 
 // initial state
 const state = {
@@ -24,7 +25,11 @@ const getters = {
     return {}
   },
   me_name: state => {
-    if (state.is_login) return state.me.first_name + ' ' + state.me.last_name
+    if (state.is_login) return state.me.company.name + ' Admin'
+    return ''
+  },
+  me_company: state => {
+    if (state.is_login) return state.me.company.name
     return ''
   },
   logs: state => state.logs,
@@ -220,7 +225,7 @@ const mutations = {
     if (response.data === 'success') {
       state.is_login = true
       state.me = response
-      router.push({ name: 'dashboard' })
+      router.push({ name: 'dashboard', params: { company: response.company.name } })
     }
   },
 
@@ -231,7 +236,7 @@ const mutations = {
   [types.LOGIN_2FACTOR_SUCCESS](state, response) {
     state.is_login = true
     state.me = response
-    router.push({ name: 'dashboard' })
+    router.push({ name: 'dashboard', params: { company: response.company.name } })
   },
   [types.LOGIN_2FACTOR_FAILED]() {
   },

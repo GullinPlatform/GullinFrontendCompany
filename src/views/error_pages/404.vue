@@ -9,7 +9,7 @@
             <div class="buttons-con">
               <div class="action-link-wrap">
                 <a onclick="history.back(-1)" href="" class="btn btn-custom btn-primary waves-effect waves-light m-t-20">Go Back</a>
-                <router-link :to="{name:'dashboard'}" class="btn btn-custom btn-primary waves-effect waves-light m-t-20" v-show="is_login">Go to Dashboard</router-link>
+                <router-link :to="{name:'dashboard', params:{company:me_company}}" class="btn btn-custom btn-primary waves-effect waves-light m-t-20" v-show="is_login">Go to Dashboard</router-link>
                 <router-link :to="{name:'user_login'}" class="btn btn-custom btn-primary waves-effect waves-light m-t-20" v-show="!is_login">Go to Login Page</router-link>
               </div>
             </div>
@@ -27,6 +27,7 @@
     computed: {
       ...mapGetters({
         is_login: 'is_login',
+        me_company: 'me_company',
       }),
     },
 

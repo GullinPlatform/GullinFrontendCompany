@@ -42,9 +42,6 @@ export default {
   logout() {
     return apiCall('post', 'auth/logout/')
   },
-  signup(form_data) {
-    return apiCall('post', 'auth/signup/', form_data)
-  },
   refresh() {
     return apiCall('post', 'auth/refresh/')
   },
@@ -60,9 +57,6 @@ export default {
   // Account Detail
   getMe() {
     return apiCall('get', 'me/')
-  },
-  updateMe(form_data) {
-    return apiCall('patch', 'me/', form_data)
   },
   getLog() {
     return apiCall('get', 'me/log/')
@@ -87,12 +81,6 @@ export default {
   },
   addWalletAddress(form_data) {
     return apiCall('post', 'followup/wallet_address/', form_data)
-  },
-  uploadID(form_data) {
-    return apiCall('post', 'verify/upload_id/', form_data)
-  },
-  accreditedInvestorVerification() {
-    return apiCall('post', 'verify/aiv/')
   },
 
 
