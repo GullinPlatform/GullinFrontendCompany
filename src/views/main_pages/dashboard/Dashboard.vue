@@ -223,6 +223,7 @@
     },
   }
 </script>
+
 <style scoped>
   .card-box-no-outline {
     padding: 20px;

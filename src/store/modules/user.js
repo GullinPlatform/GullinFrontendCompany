@@ -33,7 +33,6 @@ const getters = {
     return ''
   },
   logs: state => state.logs,
-
 }
 
 // actions

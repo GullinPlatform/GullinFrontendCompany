@@ -38,7 +38,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                 <!-- item-->
-                <router-link :to="{name:'settings'}" class="dropdown-item notify-item">
+                <router-link :to="{name:'settings', params:{company:me_company}}" class="dropdown-item notify-item">
                   <i class="mdi mdi-account-star-variant"></i>
                   <span>My Profile</span>
                 </router-link>
