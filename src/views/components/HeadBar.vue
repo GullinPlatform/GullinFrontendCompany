@@ -38,7 +38,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                 <!-- item-->
-                <router-link :to="{name:'settings'}" class="dropdown-item notify-item" v-show="$route.name!=='user_signup_followup'">
+                <router-link :to="{name:'settings', params:{company:me_company}}" class="dropdown-item notify-item" v-show="$route.name!=='user_signup_followup'">
                   <i class="mdi mdi-account-star-variant"></i>
                   <span>My Profile</span>
                 </router-link>
@@ -88,13 +88,13 @@
                 <i class="ti-home"></i>Dashboard
               </router-link>
             </li>
-            <li class="has-submenu" :class="{active: $route.name === 'token_sale_list' || $route.name === 'token_sale_detail'}">
+            <li class="has-submenu" :class="{active: $route.name === 'whitelist'}">
               <router-link :to="{name:'whitelist', params:{company:me_company}}">
                 <i class="ti-star"></i>Whitelist
               </router-link>
             </li>
 
-            <li class="has-submenu" :class="{active: $route.name === 'wallet'}">
+            <li class="has-submenu" :class="{active: $route.name === 'kyc_data'}">
               <router-link :to="{name:'kyc_data', params:{company:me_company}}">
                 <i class="ti-wallet"></i>KYC Data
               </router-link>
