@@ -3,23 +3,22 @@ import * as types from '../mutation-types'
 
 // initial state
 const state = {
-  company_list: [],
   current_company: {},
   press_releases: [],
+  whitelist: [],
 }
 
 const getters = {
-  company_list: state => state.company_list,
   current_company: state => state.current_company,
   current_token_detail: state => state.current_company.token_detail,
   press_releases: state => state.press_releases,
 }
 
 const actions = {
-  listCompanies({ commit }, type) {
-    return companyApi.listCompanies(type)
+  getWhitelist({ commit }, type) {
+    return companyApi.getWhitelist(type)
       .then((response) => {
-        commit(types.LIST_COMPANIES, response)
+        commit(types.GET_WHITELIST, response)
         return Promise.resolve(response)
       })
       .catch(error => Promise.reject(error))
@@ -51,6 +50,9 @@ const mutations = {
   },
   [types.LIST_PRESS_RELEASES](state, response) {
     state.press_releases = response
+  },
+  [types.GET_WHITELIST](state, response){
+    state.whtelist = response
   },
 }
 
