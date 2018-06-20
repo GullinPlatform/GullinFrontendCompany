@@ -29,6 +29,7 @@ export const UPLOAD_ID = 'UPLOAD_ID'
 export const GET_COMPANY = 'GET_COMPANY'
 export const LIST_COMPANIES = 'LIST_COMPANIES'
 export const LIST_PRESS_RELEASES = 'LIST_PRESS_RELEASES'
+export const GET_WHITELIST = 'GET_WHITELIST'
 
 
 // ----- Wallet ----

@@ -38,7 +38,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                 <!-- item-->
-                <router-link :to="{name:'settings', params:{company:me_company}}" class="dropdown-item notify-item" v-show="$route.name!=='user_signup_followup'">
+                <router-link :to="{name:'settings', params:{company:me_company}}" class="dropdown-item notify-item">
                   <i class="mdi mdi-account-star-variant"></i>
                   <span>My Profile</span>
                 </router-link>
@@ -78,7 +78,7 @@
       <!-- end container -->
     </div>
     <!-- end topbar-main -->
-    <div class="navbar-custom" v-if="is_login&&$route.name!=='user_signup_followup'">
+    <div class="navbar-custom" v-if="is_login">
       <div class="container-fluid">
         <div id="navigation">
           <!-- Navigation Menu-->
