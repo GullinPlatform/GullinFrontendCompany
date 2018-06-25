@@ -29,7 +29,7 @@ const isNotAuthenticated = (to, from, next) => {
       // If logged in, then check if verification_level < 2 (wallet not created)
       if (store.getters.verification_level < 2) return next({ name: 'user_signup_followup' })
       // If verification_level > 2 (wallet created), then load wallet and go to dashboard
-      return store.dispatch('getWallet').then(() => next({ name: 'dashboard', params: { company: store.getters.me_company } }))
+      return next({ name: 'dashboard', params: { company: store.getters.me_company } })
     })
     // After refresh, if still logged out, go to login page
     .catch(() => next())
@@ -39,13 +39,13 @@ const isAuthenticated = (to, from, next) => {
   // If already login
   if (store.getters.is_login)
   // Load wallet and go to the destination
-    return store.dispatch('getWallet').then(() => next())
+    return next()
 
   // Else Refresh token
   store.dispatch('refresh')
     .then(() => {
       // Load wallet and go to the destination
-      return store.dispatch('getWallet').then(() => next())
+      return next()
     })
     // After refresh, if still logged out, go to login page
     .catch(() => next({ name: 'user_login' }))

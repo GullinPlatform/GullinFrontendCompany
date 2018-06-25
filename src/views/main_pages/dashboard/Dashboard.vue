@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-if="me_wallet&&transactions">
+  <div class="wrapper">
     <div class="container-fluid">
 
       <!-- Page-Title -->
@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="card-box">
-            <h4 class="text-dark  header-title m-t-0 m-b-30">ETH Price</h4>
+            <h4 class="text-dark  header-title m-t-0 m-b-30">ETH Raised</h4>
             <div class="widget-chart text-center">
               <div style="min-width: 200px; min-height: 200px;">
                 <canvas id="eth-chart" width="200px"></canvas>
@@ -48,7 +48,7 @@
           <div class="card-box">
             <h4 class="text-dark header-title m-t-0 m-b-30">My Wallet
               <div class="pull-right">
-                <router-link :to="{name:'wallet'}" class="text-primary">See All</router-link>
+                <!--<router-link :to="{name:'wallet'}" class="text-primary">See All</router-link>-->
               </div>
             </h4>
             <div class="widget-simple-chart" v-for="(balance, index) in balances" v-if="index<=3">
@@ -69,7 +69,7 @@
           <div class="card-box">
             <h4 class="text-dark header-title m-b-30">
               <div class="pull-right">
-                <router-link :to="{name:'wallet'}" class="text-primary">See All</router-link>
+                <!--<router-link :to="{name:'wallet'}" class="text-primary">See All</router-link>-->
               </div>
               Latest Transactions
             </h4>
@@ -85,25 +85,25 @@
               </tr>
               </thead>
               <tbody>
-              <tr v-for="(tx, index) in transactions" v-if="index<5">
-                <th v-if="tx.type==='SEND'"><span class="badge badge-danger">{{tx.type}}</span></th>
-                <th v-else><span class="badge badge-success">{{tx.type}}</span></th>
-                <td>{{Number(tx.value).toFixed(3) + ' ' + tx.value_unit}}</td>
-                <td v-if="tx.from_address_note">{{tx.from_address_note}}</td>
-                <td v-else><a :href="'https://etherscan.io/address/'+tx.from_address" target="_blank">{{tx.from_address.substring(0,7)+'...'}}</a></td>
-                <td v-if="tx.to_address_note">{{tx.to_address_note}}</td>
-                <td v-else><a :href="'https://etherscan.io/address/'+tx.to_address" target="_blank">{{tx.to_address.substring(0,7)+'...'}}</a></td>
-                <td v-html="timeFromNow(tx.datetime)"></td>
-                <td>
-                  <small>{{tx.tx_fee}}</small>
-                </td>
-              </tr>
+              <!--<tr v-for="(tx, index) in transactions" v-if="index<5">-->
+                <!--<th v-if="tx.type==='SEND'"><span class="badge badge-danger">{{tx.type}}</span></th>-->
+                <!--<th v-else><span class="badge badge-success">{{tx.type}}</span></th>-->
+                <!--<td>{{Number(tx.value).toFixed(3) + ' ' + tx.value_unit}}</td>-->
+                <!--<td v-if="tx.from_address_note">{{tx.from_address_note}}</td>-->
+                <!--<td v-else><a :href="'https://etherscan.io/address/'+tx.from_address" target="_blank">{{tx.from_address.substring(0,7)+'...'}}</a></td>-->
+                <!--<td v-if="tx.to_address_note">{{tx.to_address_note}}</td>-->
+                <!--<td v-else><a :href="'https://etherscan.io/address/'+tx.to_address" target="_blank">{{tx.to_address.substring(0,7)+'...'}}</a></td>-->
+                <!--<td v-html="timeFromNow(tx.datetime)"></td>-->
+                <!--<td>-->
+                  <!--<small>{{tx.tx_fee}}</small>-->
+                <!--</td>-->
+              <!--</tr>-->
               </tbody>
             </table>
-            <div v-if="!transactions.length" class="text-center">
-              <p>You have no transactions.</p>
-              <router-link :to="{name:'token_sale_list'}" class="btn btn-primary">Explore</router-link>
-            </div>
+            <!--<div v-if="!transactions.length" class="text-center">-->
+              <!--<p>You have no transactions.</p>-->
+              <!--<router-link :to="{name:'token_sale_list'}" class="btn btn-primary">Explore</router-link>-->
+            <!--</div>-->
           </div>
         </div>
         <!-- end col -8 -->
@@ -111,12 +111,12 @@
           <div class="card-box">
             <h4 class="text-dark header-title">Press Releases</h4>
             <div class="inbox-widget">
-              <a :href="release.url" target="_blank" v-for="(release, index) in press_releases" v-if="index<=4">
-                <div class="inbox-item">
-                  <p class="inbox-item-author">{{release.title}}</p>
-                  <p class="inbox-item-text">{{release.brief}} <span class="pull-right">{{timeFromNow(release.created)}}</span></p>
-                </div>
-              </a>
+              <!--<a :href="release.url" target="_blank" v-for="(release, index) in press_releases" v-if="index<=4">-->
+                <!--<div class="inbox-item">-->
+                  <!--<p class="inbox-item-author">{{release.title}}</p>-->
+                  <!--<p class="inbox-item-text">{{release.brief}} <span class="pull-right">{{timeFromNow(release.created)}}</span></p>-->
+                <!--</div>-->
+              <!--</a>-->
             </div>
           </div>
 
@@ -144,7 +144,7 @@
       ...mapGetters({
         is_login: 'is_login',
         me: 'me',
-        me_wallet: 'me_wallet',
+        // me_wallet: 'me_wallet',
         balances: 'balances',
         transactions: 'transactions',
         press_releases: 'press_releases',

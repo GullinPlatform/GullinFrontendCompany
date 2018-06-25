@@ -61,7 +61,7 @@ const actions = {
     return userApi.login2factor(form_data)
       .then((response) => {
         commit(types.LOGIN_2FACTOR_SUCCESS, response)
-        dispatch('getWallet').then(() => Promise.resolve())
+        return Promise.resolve()
       })
       .catch(error => {
         commit(types.LOGIN_2FACTOR_FAILED)
