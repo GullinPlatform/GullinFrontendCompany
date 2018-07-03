@@ -32,8 +32,8 @@ const apiCall = (method, url, form_data, params) => {
 }
 
 export default {
-  getWhitelist(id) {
-    return apiCall('get', id +  '/whitelist/')
+  getWhitelist(parameter_dict) {
+    return apiCall('get', 'whitelist/', null, parameter_dict)
   },
   getCompany(id) {
     return apiCall('get', id + '/')

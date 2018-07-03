@@ -12,11 +12,12 @@ const getters = {
   current_company: state => state.current_company,
   current_token_detail: state => state.current_company.token_detail,
   press_releases: state => state.press_releases,
+  whitelist: state => state.whitelist,
 }
 
 const actions = {
-  getWhitelist({ commit }, type) {
-    return companyApi.getWhitelist(type)
+  getWhitelist({ commit }, parameter_dict) {
+    return companyApi.getWhitelist(parameter_dict)
       .then((response) => {
         commit(types.GET_WHITELIST, response)
         return Promise.resolve(response)
@@ -52,7 +53,7 @@ const mutations = {
     state.press_releases = response
   },
   [types.GET_WHITELIST](state, response){
-    state.whtelist = response
+    state.whitelist = response
   },
 }
 
